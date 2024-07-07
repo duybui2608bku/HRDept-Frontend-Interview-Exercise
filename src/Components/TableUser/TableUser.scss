@@ -1,0 +1,576 @@
+@use '../../Scss/BreakPoint.scss' as *;
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+.table {
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem 2rem;
+  &__feature {
+    display: flex;
+    justify-content: space-between;
+    &__detail {
+      display: flex;
+      gap: 15px;
+      &__export {
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        color: white;
+        background-color: #333333;
+        border-radius: 10px;
+      }
+      &__add {
+        cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        font-size: 20px;
+        color: white;
+        background-color: #333333;
+        border-radius: 10px;
+      }
+    }
+  }
+  &__fillter {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    &__input {
+      input {
+        padding: 0.5rem 1.5rem;
+        font-size: 20px;
+        border: 3px solid #ddd;
+        border-radius: 10px;
+      }
+    }
+    &__select {
+      select {
+        padding: 0.5rem 1.5rem;
+        font-size: 20px;
+        border: 3px solid #ddd;
+        border-radius: 10px;
+      }
+    }
+    &__search {
+      cursor: pointer;
+      padding: 0.5rem 1.5rem;
+      font-size: 20px;
+      color: white;
+      background-color: #333333;
+      border-radius: 10px;
+    }
+  }
+  &__user {
+    margin-top: 40px;
+    &__custome {
+      border-radius: 15px;
+      padding: 1rem 2rem;
+      td {
+        padding: 1rem 0;
+      }
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    &__rowofpage {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      select {
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        width: 60px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .table {
+    padding: 1rem 1rem;
+    &__feature {
+      display: flex;
+      flex-direction: column;
+      &__detail {
+        margin-top: 10px;
+        &__export {
+          padding: 0.5rem 0.5rem;
+          font-size: 0.8rem;
+        }
+        &__add {
+          padding: 0.5rem 0.5rem;
+          font-size: 0.8em;
+        }
+      }
+    }
+    &__fillter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+      &__input {
+        input {
+          width: 100px;
+          padding: 0.5rem 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+      &__select {
+        select {
+          padding: 0.5rem 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+      &__search {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+    &__user {
+      margin-top: 10px;
+    }
+    &__pagination {
+      display: flex;
+      flex-direction: column;
+      &__rowofpage {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        select {
+          border: 2px solid #ddd;
+          border-radius: 4px;
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .table {
+    padding: 1rem 1rem;
+    &__feature {
+      display: flex;
+      // flex-direction: column;
+      &__detail {
+        margin-top: 10px;
+        &__export {
+          padding: 0.5rem 0.5rem;
+          font-size: 1rem;
+        }
+        &__add {
+          padding: 0.5rem 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+    &__fillter {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      &__input {
+        input {
+          width: 200px;
+          padding: 0.5rem 0.5rem;
+          font-size: 1rem;
+        }
+      }
+      &__select {
+        select {
+          padding: 0.5rem 0.5rem;
+          font-size: 1rem;
+        }
+      }
+      &__search {
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+      }
+    }
+    &__pagination {
+      display: flex;
+      flex-direction: column;
+      &__rowofpage {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        select {
+          border: 2px solid #ddd;
+          border-radius: 4px;
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
+button,
+fieldset,
+input {
+  all: unset;
+}
+
+.DialogOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.DialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 1000px;
+  max-height: 85vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.DialogContentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.DialogContentRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-left: 3px solid #ddd;
+  .imageUser {
+    font-size: 200px;
+  }
+}
+
+.DialogContenLeft {
+  padding: 2rem;
+}
+
+.DialogContentRight .imgPreview {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.DialogContentLeft .FieldInputOne {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+  input {
+    width: 250px !important;
+  }
+  select {
+    width: 270px !important;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 0 10px;
+  }
+}
+
+@include tablet {
+  .DialogContentContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .DialogContentLeft .FieldInputOne {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+    input {
+      width: 100% !important;
+    }
+    select {
+      width: 100% !important;
+      height: 38px;
+    }
+  }
+  .DialogContentLeft .FieldInputTwo {
+    input {
+      width: 100%;
+    }
+  }
+  .DialogContentRight {
+    border-left: none;
+    gap: 50px;
+    .imageUser {
+      font-size: 200px !important;
+    }
+  }
+}
+
+@include mobile {
+  .DialogContentContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .DialogContentLeft .FieldInputOne {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+    input {
+      width: 100% !important;
+    }
+    select {
+      width: 100% !important;
+      height: 38px;
+    }
+  }
+  .DialogContentRight {
+    border-left: none;
+    gap: 50px;
+    .imageUser {
+      font-size: 150px !important;
+    }
+  }
+}
+
+.DialogContentLeft .FieldInputOne .FieldInputOneCus {
+  display: flex;
+  flex-direction: column;
+}
+
+.DialogContentLeft .FieldInputOne .FieldInputOneCus .error {
+  color: red;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.DialogContentLeft .FieldInputTwo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  input {
+    height: 50px;
+  }
+}
+
+.DialogContenRight .btnSelectImage {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.DialogContent:focus {
+  outline: none;
+}
+
+.DialogTitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.DialogDescription {
+  margin: 10px 0 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+}
+
+.Button.green {
+  cursor: pointer;
+  color: white;
+  background-color: #333333;
+}
+
+.Button .cancle {
+  border: 1px solid #ddd;
+  background-color: #ddd;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.IconButton {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violet-11);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.IconButton:hover {
+  background-color: var(--violet-4);
+}
+.IconButton:focus {
+  box-shadow: 0 0 0 2px var(--violet-7);
+}
+
+.Fieldset {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.Label {
+  font-size: 15px;
+  color: black;
+  width: 90px;
+}
+
+.Input {
+  width: 100%;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+  box-shadow: 0 0 0 2px #ddd;
+  height: 35px;
+}
+.Input:focus {
+  box-shadow: 0 0 0 2px var(--violet-8);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.DialogContent .DialogContentContainer .DialogContentLeft input[type='text'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+  box-shadow: 0 0 0 2px #ddd;
+  height: 35px;
+}
+
+.DialogContent .DialogContentContainer .DialogContentLeft input[type='password'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+  box-shadow: 0 0 0 2px #ddd;
+  height: 35px;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight .imageUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight .btnSelectImage {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight input[type='file'] {
+  display: none;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight .Button.Cancel {
+  background-color: #ddd;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight .Button.Submit {
+  cursor: pointer;
+  color: white;
+  background-color: #333333;
+}
+
+.DialogContent .DialogContentContainer .DialogContentRight .Button.Submit {
+  cursor: pointer;
+  color: white;
+  background-color: #333333;
+}
+
+@include mobile {
+  .table__user__custome th,
+  .table__user__custome td {
+    padding: 12px 15px;
+    overflow-x: auto;
+  }
+}
+
+@include tablet {
+  .table__user__custome th,
+  .table__user__custome td {
+    padding: 12px 15px;
+    overflow-x: auto;
+  }
+}
+
+.table__user__custome th,
+.table__user__custome td {
+  padding: 20px 30px;
+}
+
+.table__header-cell {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

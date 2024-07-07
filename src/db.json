@@ -1,0 +1,180 @@
+{
+  "users": [
+    {
+      "id": "4",
+      "email": "emily.davis@example.com",
+      "phone": "01234567892",
+      "firstName": "Davis",
+      "lastName": "Davis",
+      "password": "123123",
+      "role": "admin",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "5",
+      "email": "chris.brown@example.com",
+      "phone": "01234567895",
+      "firstName": "Chris",
+      "lastName": "Brown",
+      "password": "123456",
+      "role": "user",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "6",
+      "email": "patricia.garcia@example.com",
+      "phone": "01234567896",
+      "firstName": "Patricia",
+      "lastName": "Garcia",
+      "password": "123456",
+      "role": "user",
+      "status": "inactive",
+      "avatar": ""
+    },
+    {
+      "id": "8",
+      "email": "linda.martinez@example.com",
+      "phone": "01234567898",
+      "firstName": "Linda",
+      "lastName": "Martinez",
+      "password": "123456",
+      "role": "user",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "9",
+      "email": "david.lee@example.com",
+      "phone": "01234567899",
+      "firstName": "Lee",
+      "lastName": "Lee",
+      "password": "123123",
+      "role": "user",
+      "status": "inactive",
+      "avatar": ""
+    },
+    {
+      "id": "10",
+      "email": "susan.taylor@example.com",
+      "phone": "01234567890",
+      "firstName": "Susan",
+      "lastName": "Taylor",
+      "password": "123456",
+      "role": "admin",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "11",
+      "email": "charles.moore@example.com",
+      "phone": "01234567891",
+      "firstName": "Charles",
+      "lastName": "Moore",
+      "password": "123456",
+      "role": "user",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "12",
+      "email": "margaret.thompson@example.com",
+      "phone": "01234567892",
+      "firstName": "Margaret",
+      "lastName": "Thompson",
+      "password": "123456",
+      "role": "user",
+      "status": "inactive",
+      "avatar": ""
+    },
+    {
+      "id": "13",
+      "email": "thomas.anderson@example.com",
+      "phone": "01234567893",
+      "firstName": "Thomas",
+      "lastName": "Anderson",
+      "password": "123456",
+      "role": "admin",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "14",
+      "email": "sarah.jackson@example.com",
+      "phone": "01234567894",
+      "firstName": "Sarah",
+      "lastName": "Jackson",
+      "password": "123456",
+      "role": "user",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "15",
+      "email": "daniel.white@example.com",
+      "phone": "01234567895",
+      "firstName": "Daniel",
+      "lastName": "White",
+      "password": "123456",
+      "role": "user",
+      "status": "inactive",
+      "avatar": ""
+    },
+    {
+      "id": "16",
+      "email": "nancy.harris@example.com",
+      "phone": "01234567896",
+      "firstName": "Nancy",
+      "lastName": "Harris",
+      "password": "123456",
+      "role": "admin",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "17",
+      "email": "paul.clark@example.com",
+      "phone": "01234567897",
+      "firstName": "Paul",
+      "lastName": "Clark",
+      "password": "123456",
+      "role": "user",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "18",
+      "email": "karen.lewis@example.com",
+      "phone": "01234567898",
+      "firstName": "Karen",
+      "lastName": "Lewis",
+      "password": "123456",
+      "role": "user",
+      "status": "inactive",
+      "avatar": ""
+    },
+    {
+      "id": "19",
+      "email": "james.robinson@example.com",
+      "phone": "01234567899",
+      "firstName": "James",
+      "lastName": "Robinson",
+      "password": "123456",
+      "role": "admin",
+      "status": "active",
+      "avatar": ""
+    },
+    {
+      "id": "20",
+      "email": "barbara.walker@example.com",
+      "phone": "01234567890",
+      "firstName": "Walker",
+      "lastName": "Walker",
+      "password": "123132",
+      "role": "user",
+      "status": "active",
+      "avatar": "qdZmBCI"
+    }
+  ]
+}

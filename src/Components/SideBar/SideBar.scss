@@ -1,0 +1,101 @@
+@use '../../Scss/BreakPoint.scss' as *;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 320px;
+  background-color: #ddd;
+  box-shadow:
+    rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  &__logo {
+    display: grid;
+    place-items: center;
+    height: 120px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__menu {
+    position: relative;
+    &__item {
+      display: flex;
+      align-items: center;
+      place-content: flex-start;
+      padding: 1rem 3rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: ba;
+      transition: color 0.3s ease-in-out;
+      &.active {
+        color: black;
+      }
+
+      &__icon {
+        margin-right: 1rem;
+      }
+    }
+
+    &__indicator {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: calc(100% - 40px);
+      border-radius: 10px;
+      background-color: #fff;
+      z-index: -1;
+      transform: translateX(-50%);
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+@include mobile {
+  .sidebar {
+    width: 100px;
+    &__logo {
+      display: none;
+    }
+    &__menu {
+      &__item {
+        display: flex;
+        justify-content: center;
+        &__text {
+          display: none;
+        }
+      }
+      &__indicator {
+        width: 50px;
+        left: 43%;
+        height: 40px !important;
+        top: 5px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .sidebar {
+    width: 100px;
+    &__logo {
+      display: none;
+    }
+    &__menu {
+      &__item {
+        display: flex;
+        justify-content: center;
+        &__text {
+          display: none;
+        }
+      }
+      &__indicator {
+        width: 50px;
+        left: 43%;
+        height: 40px !important;
+        top: 5px;
+      }
+    }
+  }
+}

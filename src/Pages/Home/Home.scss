@@ -1,0 +1,71 @@
+@use '../../Scss/BreakPoint.scss' as *;
+.home {
+  &__data {
+    margin-left: 320px;
+    &__header {
+      border-top: 3px solid #ddd;
+      border-bottom: 3px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      &__logo {
+        cursor: pointer;
+      }
+      &__user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        &__name {
+          font-weight: 500;
+        }
+        &__avatar {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    &__table {
+      margin: 3rem 3rem;
+    }
+  }
+}
+
+@include mobile {
+  .home {
+    &__data {
+      margin-left: 100px;
+      &__header {
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: start;
+        &__logo {
+          font-size: 0.8rem;
+        }
+        &__user {
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+          &__name {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      &__table {
+        margin: 1rem 1.5rem;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .home {
+    &__data {
+      margin-left: 100px;
+      &__table {
+        margin: 1rem 1.5rem;
+      }
+    }
+  }
+}
