@@ -18,4 +18,3 @@ cd HRDept-Frontend-Interview-Exercise
 npm install
 cd src
 npm run dev
-npx json-server db.json
