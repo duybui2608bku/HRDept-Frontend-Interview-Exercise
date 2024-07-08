@@ -11,7 +11,7 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import getUsers from 'src/Service/Users.api'
 import addUser from 'src/Service/AddUser.api'
 import { UserUpdate } from 'src/Types/User.type'
-import { omit } from 'lodash'
+import { omit, sortBy } from 'lodash'
 import deleteUser from 'src/Service/DeleteUser.api'
 import { toast } from 'react-toastify'
 import { queryClient } from 'src/main'
@@ -110,7 +110,12 @@ const TableUser = () => {
 
   // Mutation hooks
   const addMutation = useMutation({
-    mutationFn: (body: UserUpdate) => addUser(body)
+    mutationFn: (body: UserUpdate) => addUser(body),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['users'] })
+      toast.success('Add User Success!')
+      setOpen(false)
+    }
   })
 
   const deleteMutation = useMutation({
@@ -217,10 +222,10 @@ const TableUser = () => {
 
   const page = location.search.split('=')[1]
   const paramsConfig = {
-    _page: page || '1',
-    _limit: rowOfPage ? rowOfPage : '5',
-    _sort: querySort ? querySort : '',
-    _order: orderSort ? 'asc' : 'desc'
+    page: page || '1',
+    limit: rowOfPage ? rowOfPage : '5',
+    sortBy: querySort ? querySort : '',
+    order: orderSort ? 'asc' : 'desc'
   }
 
   const { data: listUser } = useQuery({
@@ -301,7 +306,7 @@ const TableUser = () => {
                           </div>
                           <div className='FieldInputOneCus'>
                             <label>Role :</label>
-                            <select value={roleFilter} {...register('role', { required: true })}>
+                            <select defaultValue={'user'} value={roleFilter} {...register('role', { required: true })}>
                               <option value='user'>User</option>
                               <option value='admin'>Admin</option>
                             </select>

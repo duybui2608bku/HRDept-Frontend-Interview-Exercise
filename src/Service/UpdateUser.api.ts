@@ -3,7 +3,7 @@ import { UserUpdate } from 'src/Types/User.type'
 
 const updateUser = (body: UserUpdate) => {
   const { id, ...data } = body
-  return axiosInstance.patch(`http://localhost:3000/users/${id}`, data)
+  return axiosInstance.put(`/${id}`, data)
 }
 
 export default updateUser

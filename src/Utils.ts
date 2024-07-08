@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as XLSX from 'xlsx'
 const axiosInstance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/',
+  baseURL: 'https://668b6f290b61b8d23b098d25.mockapi.io/Users',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'

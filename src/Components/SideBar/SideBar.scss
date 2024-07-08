@@ -54,7 +54,7 @@
 
 @include mobile {
   .sidebar {
-    width: 100px;
+    width: 80px;
     &__logo {
       display: none;
     }
@@ -68,7 +68,7 @@
       }
       &__indicator {
         width: 50px;
-        left: 43%;
+        left: 50%;
         height: 40px !important;
         top: 5px;
       }
@@ -78,7 +78,7 @@
 
 @include tablet {
   .sidebar {
-    width: 100px;
+    width: 80px;
     &__logo {
       display: none;
     }
@@ -92,7 +92,7 @@
       }
       &__indicator {
         width: 50px;
-        left: 43%;
+        left: 50%;
         height: 40px !important;
         top: 5px;
       }

@@ -24,6 +24,6 @@ export interface UserUpdate {
 }
 
 export interface UserConfig {
-  _page?: string | number
-  _limit?: string | number
+  page?: string | number
+  limit?: string | number
 }
