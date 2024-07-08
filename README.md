@@ -1,18 +1,21 @@
 # Project Setup Instructions
 
-## Running the Project
+## Prerequisites
 
-1. Navigate to the `src` directory.
-2. Run the following command to start the development server:
+Before you begin, ensure you have the following installed:
 
-    ```sh
-    npm run dev
-    ```
+- Node.js
+- npm (Node Package Manager)
+- npx (Node Package Executor)
 
-## Starting the Server
+## Cloning the Repository
 
-1. Use the following command to start the JSON server:
+First, clone the project repository to your local machine:
 
-    ```sh
-    npx json-server db.json
-    ```
+```sh
+git clone https://github.com/duybui2608bku/HRDept-Frontend-Interview-Exercise
+cd HRDept-Frontend-Interview-Exercise
+npm install
+cd src
+npm run dev
+npx json-server db.json
