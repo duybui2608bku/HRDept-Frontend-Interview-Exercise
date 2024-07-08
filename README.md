@@ -13,7 +13,7 @@ Before you begin, ensure you have the following installed:
 First, clone the project repository to your local machine:
 
 ```sh
-git clone https://github.com/your-username/HRDept-Frontend-Interview-Exercise
+git clone https://github.com/duybui2608bku/HRDept-Frontend-Interview-Exercise
 cd HRDept-Frontend-Interview-Exercise
 npm install
 cd src
